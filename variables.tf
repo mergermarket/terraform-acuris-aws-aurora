@@ -46,6 +46,12 @@ variable "instance_type" {
   description = "Instance type to use"
 }
 
+variable "replica_instance_type" {
+  type        = string
+  default     = ""
+  description = "Instance type to use for replicas. Inherits instance_type value if unspecified."
+}
+
 variable "publicly_accessible" {
   type        = string
   default     = "false"

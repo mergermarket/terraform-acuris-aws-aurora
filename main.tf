@@ -204,7 +204,7 @@ resource "aws_rds_cluster_instance" "cluster_instance_n" {
   engine_version               = var.engine-version
   identifier                   = var.identifier_prefix != "" ? format("%s-node-%d", var.identifier_prefix, count.index + 1) : format("%s-aurora-node-%d", var.envname, count.index + 1)
   cluster_identifier           = aws_rds_cluster.default.id
-  instance_class               = var.instance_type
+  instance_class               = var.replica_instance_type != "" ? var.replica_instance_type : var.instance_type
   publicly_accessible          = var.publicly_accessible
   db_subnet_group_name         = aws_db_subnet_group.main.name
   db_parameter_group_name      = var.db_parameter_group_name
