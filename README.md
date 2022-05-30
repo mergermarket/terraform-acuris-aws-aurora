@@ -180,8 +180,9 @@ resource "aws_rds_cluster_parameter_group" "aurora_cluster_postgres96_parameter_
 | envname | Environment name (eg,test, stage or prod) | string | - | yes |
 | envtype | Environment type (eg,prod or nonprod) | string | - | yes |
 | final_snapshot_identifier | The name to use when creating a final snapshot on cluster destroy, appends a random 8 digits to name to ensure it's unique too. | string | `final` | no |
-| identifier_prefix | Prefix for cluster and instance identifier | string | `` | no |
+| identifier_prefix | Prefix for cluster and instance identifier | string | `""` | no |
 | instance_type | Instance type to use | string | `db.t2.small` | no |
+| replica_instance_type | Instance type to use for replicas | string | `"" (inherits instance_type)` | no |
 | monitoring_interval | The interval (seconds) between points when Enhanced Monitoring metrics are collected | string | `0` | no |
 | name | Name given to DB subnet group | string | - | yes |
 | password | Master DB password | string | - | yes |
@@ -199,7 +200,7 @@ resource "aws_rds_cluster_parameter_group" "aurora_cluster_postgres96_parameter_
 | replica_scale_out_cooldown | Cooldown in seconds before allowing further scaling operations after a scale out | string | `300` | no |
 | security_groups | VPC Security Group IDs | list | - | yes |
 | skip_final_snapshot | Should a final snapshot be created on cluster destroy | string | `false` | no |
-| snapshot_identifier | DB snapshot to create this database from | string | `` | no |
+| snapshot_identifier | DB snapshot to create this database from | string | `""` | no |
 | storage_encrypted | Specifies whether the underlying storage layer should be encrypted | string | `true` | no |
 | subnets | List of subnet IDs to use | list | - | yes |
 | username | Master DB username | string | `root` | no |
