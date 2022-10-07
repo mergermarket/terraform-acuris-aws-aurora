@@ -236,3 +236,9 @@ variable "performance_insights_enabled" {
   description = "Whether to enable Performance Insights"
 }
 
+variable "allow_major_version_upgrade" {
+  type        = string
+  default     = false
+  description = "Whether to allow major version upgrades"
+}
+

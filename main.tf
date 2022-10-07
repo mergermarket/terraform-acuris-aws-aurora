@@ -244,6 +244,7 @@ resource "aws_rds_cluster" "default" {
   apply_immediately               = var.apply_immediately
   db_cluster_parameter_group_name = var.db_cluster_parameter_group_name
   deletion_protection             = var.deletion_protection
+  allow_major_version_upgrade     = var.allow_major_version_upgrade
 }
 
 // Geneate an ID when an environment is initialised
