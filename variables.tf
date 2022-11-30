@@ -242,3 +242,8 @@ variable "allow_major_version_upgrade" {
   description = "Whether to allow major version upgrades"
 }
 
+variable "additional_tags" {
+  default     = {}
+  description = "Additional db cluster tags"
+  type        = map(string)
+}
