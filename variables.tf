@@ -82,13 +82,13 @@ variable "skip_final_snapshot" {
 
 variable "backup_retention_period" {
   type        = string
-  default     = "7"
+  default     = "31"
   description = "How long to keep backups for (in days)"
 }
 
 variable "preferred_backup_window" {
   type        = string
-  default     = "02:00-03:00"
+  default     = "22:00-00:00"
   description = "When to perform DB backups"
 }
 
