@@ -152,6 +152,12 @@ variable "storage_encrypted" {
   description = "Specifies whether the underlying storage layer should be encrypted"
 }
 
+variable "storage_type" {
+  type        = string
+  default     = ""
+  description = "Specifies the storage type to be associated with the DB cluster"
+}
+
 variable "cw_alarms" {
   type        = string
   default     = false

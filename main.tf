@@ -241,6 +241,7 @@ resource "aws_rds_cluster" "default" {
   vpc_security_group_ids          = var.security_groups
   snapshot_identifier             = var.snapshot_identifier
   storage_encrypted               = var.storage_encrypted
+  storage_type                    = var.storage_type
   apply_immediately               = var.apply_immediately
   db_cluster_parameter_group_name = var.db_cluster_parameter_group_name
   deletion_protection             = var.deletion_protection
