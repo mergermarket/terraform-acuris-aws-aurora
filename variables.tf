@@ -253,3 +253,9 @@ variable "additional_tags" {
   description = "Additional db cluster tags"
   type        = map(string)
 }
+
+variable "ca_cert_identifier" {
+  type        = string
+  default     = ""
+  description = "The identifier of the CA certificate for the DB cluster"
+}
