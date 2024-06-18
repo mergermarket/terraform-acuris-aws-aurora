@@ -189,6 +189,7 @@ resource "aws_rds_cluster_instance" "cluster_instance_0" {
   auto_minor_version_upgrade   = var.auto_minor_version_upgrade
   promotion_tier               = "0"
   performance_insights_enabled = var.performance_insights_enabled
+  ca_cert_identifier           = var.ca_cert_identifier
 
   tags = {
     envname = var.envname
@@ -215,6 +216,7 @@ resource "aws_rds_cluster_instance" "cluster_instance_n" {
   auto_minor_version_upgrade   = var.auto_minor_version_upgrade
   promotion_tier               = count.index + 1
   performance_insights_enabled = var.performance_insights_enabled
+  ca_cert_identifier           = var.ca_cert_identifier
 
   tags = {
     envname = var.envname
@@ -246,6 +248,7 @@ resource "aws_rds_cluster" "default" {
   db_cluster_parameter_group_name = var.db_cluster_parameter_group_name
   deletion_protection             = var.deletion_protection
   allow_major_version_upgrade     = var.allow_major_version_upgrade
+
 
   tags = var.additional_tags
 }
