@@ -195,6 +195,10 @@ resource "aws_rds_cluster_instance" "cluster_instance_0" {
     envname = var.envname
     envtype = var.envtype
   }
+
+  lifecycle {
+    ignore_changes = [engine, engine_version, performance_insights_enabled]
+  }
 }
 
 // Create 'n' number of additional DB instance(s) in same cluster
@@ -221,6 +225,10 @@ resource "aws_rds_cluster_instance" "cluster_instance_n" {
   tags = {
     envname = var.envname
     envtype = var.envtype
+  }
+
+  lifecycle {
+    ignore_changes = [engine, engine_version, performance_insights_enabled]
   }
 }
 
